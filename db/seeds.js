@@ -42,12 +42,11 @@ async function seed() {
 
     await mongoose.connection.close()
     console.log('👋 Closed the connection to the database')
-
+    
   } catch (error) {
     console.log(error)
     await mongoose.connection.close()
     console.log('👋 Closed the connection to the database')
   }
-
 }
 seed()
