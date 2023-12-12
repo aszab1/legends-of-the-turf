@@ -5,6 +5,7 @@ export default function ImageUploadField({ formData, setFormData }){
   async function handleImageUpload(e){
     const preset = import.meta.env.VITE_UPLOAD_PRESET
     const file = e.target.files[0]
+    
     const endpoint = import.meta.env.VITE_UPLOAD_URL
 
     // Create a new form to send to Cloudinary
@@ -15,14 +16,14 @@ export default function ImageUploadField({ formData, setFormData }){
 
     // Send the form data to the API endpoint
     const { data: { secure_url }} = await axios.post(endpoint, data)
-
+console.log( secure_url )
     // send form data to image url
     setFormData({ ...formData, image: secure_url })
   }
   return (
     <>
     {formData.image ? 
-    <img src={formData.image} alt="Image" />
+    <img src={formData.image} alt="Image" style={{ width: '200px', height: 'auto'}}/>
     :
     <input type='file' name="image" onChange={handleImageUpload} />
     } 

@@ -31,7 +31,7 @@ import field from '../assets/images/field.jpg'
 export default function MyTeam() {
   const deleteTeam = useActionData()
   const usersTeam = useLoaderData()
-  const { _id, teamName, players } = usersTeam
+  const { _id, teamName, players, image } = usersTeam
 
   const sortedPlayers = players.sort((a, b) => {
     const positionOrder = { 'GK': 1, 'DF': 2, 'MF': 3, 'FW': 4 }
@@ -72,7 +72,7 @@ export default function MyTeam() {
   return (
     <>
       <section className='players'>
-        <h2>Lets Go {teamName}! </h2>
+        <h2>Lets Go {teamName}! <img src={image}/></h2>
 
         <Container fluid className='teams' style={{ display: 'flex', justifyContent: 'center', backgroundImage: `url(${field})`, backgroundSize: 'cover' }}>
           {/* <div style={{ marginRight: '20px', flexShrink: 0 }}>
