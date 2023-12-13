@@ -14,9 +14,9 @@ export async function deleteTeam(teamId){
   return redirect('/myteam/newteam')
 }
 
-export async function createTeam(request){
+export async function editTeam(request, teamId){
   const data = await formToObj(request)
-  return await axios.post(`/api/myteam/newteam`, data, {
+  return await axios.put(`/myteam/${teamId}/edit/players`, data, {
     validateStatus: () => true,
     headers: {
       Authorization: `Bearer ${getToken()}`
@@ -24,9 +24,9 @@ export async function createTeam(request){
   })
 }
 
-export async function editTeam(request, teamId){
+export async function createTeam(request){
   const data = await formToObj(request)
-  return await axios.put(`/myteam/${teamId}/edit/players`, data, {
+  return await axios.post('/api/myteam/newteam', data, {
     validateStatus: () => true,
     headers: {
       Authorization: `Bearer ${getToken()}`
