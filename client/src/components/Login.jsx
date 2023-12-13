@@ -4,6 +4,7 @@ import { setToken } from '../../utils/helpers/common'
 
 
 
+
 export default function Login() {
   const res = useActionData()
   const navigate = useNavigate()
@@ -17,15 +18,15 @@ export default function Login() {
   return (
     
       
-    <div className='login-container'>
+    <div className='login-container' >
     <Form className="login-form" method="POST">
     <p className="login-title display-6 mb-8">Login</p>
       <div className="form-group">
-        <input type="email" className="form-control" id="email" name="email" placeholder='Email' placeholder="Your email" />
+        <input type="email" className="form-control" id="email" name="email" placeholder='Your email' />
         </div>
         <div className="form-group">
         <input className="input form-control" type="password" id="password" name="password" placeholder="Password" />
-        <button className='btn btn-outline-primary btn-md m-4' type="submit">Login</button>
+        <button className='btn btn-outline-primary btn-md m-4'  type="submit">Login</button>
         {res && <p className='danger'>{res.data.message}</p>}
         </div >
     </Form>
