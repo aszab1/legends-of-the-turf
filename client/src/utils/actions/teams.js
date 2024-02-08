@@ -7,8 +7,8 @@ export async function deleteTeam(teamId){
   await axios.delete(`/api/myteam/${teamId}`, {
     validateStatus: () => true,
     headers: {
-      Authorization: `Bearer ${getToken()}`
-    }
+      Authorization: `Bearer ${getToken()}`,
+    },
   })
   return redirect('/myteam/newteam')
 }
@@ -20,8 +20,8 @@ export async function editTeam(request, teamId){
   return await axios.put(`/api/myteam/${teamId}/edit/players`, convertedData, {
     validateStatus: () => true,
     headers: {
-      Authorization: `Bearer ${getToken()}`
-    }
+      Authorization: `Bearer ${getToken()}`,
+    },
   })
 }
 
@@ -32,7 +32,7 @@ export async function createTeam(request){
   return await axios.post('/api/myteam/newteam', data, {
     validateStatus: () => true,
     headers: {
-      Authorization: `Bearer ${getToken()}`
-    }
+      Authorization: `Bearer ${getToken()}`,
+    },
   })
 }
