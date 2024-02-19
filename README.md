@@ -52,7 +52,7 @@ Back-end
 
 **Brief**
 
-**Technical Requirements: **
+**Technical Requirements:**
 
 
 
